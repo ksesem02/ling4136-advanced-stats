@@ -127,7 +127,8 @@ my_priors <- c(
   prior(normal(100, 57), class = Intercept), #what the numbers mean => 100 = where i assume my mean is, normal = normal distribution, 57 = the range of 1 sd, aka accounting for noise around the data
   prior(normal(0, 40), class = b), #note from class: the class b prior you set to 0, you ASSUME null difference between the two semantic conditions, and then plus variation of 50 each way to account for noise
   prior(normal(0, 30), class = sigma)#old notes: i haven't done anything to count the difference between similar and different tho? new notes: and you do not need to, because you are assuming 0 difference, the 40 is just to allow for sampling error/noise/minor variations around 0
-) #idk what to do with the sigma values as well?? (new notes: sigma values are assumed to also be 0, with noise of 30)
+) #idk what to do with the sigma values as well?? (new notes: sigma values are assumed to also be 0, with noise of 30) 
+#timo in class = did not do the sigma prior because lazy, apparently that is fine to do
 
 ```
 
@@ -228,6 +229,7 @@ Can you fix the mismatch between the observed data (dark blue line) and the simu
 #| label: transform
 
 # YOUR CODE HERE
+#square root transformation = gentle transformation for gentle right-side tail; log-transform too aggressive
 
 ```
 
